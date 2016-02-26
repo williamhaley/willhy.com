@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<title>INDEPENDENCE DAY</title>
+<meta charset="UTF-8">
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: url('http://knowpur.com/home/wp-content/uploads/2014/06/wallpicshd.jpg');
+  background-size: 100px;
+}
+.images {
+  text-align: center;
+}
+img {
+  max-height: 300px;
+}
+</style>
+<script type="text/javascript">
+var images = [
+"http://24.media.tumblr.com/09ce7e56790fe424ba99a29f6a5d6772/tumblr_mo50c34Ex71r7tq9yo1_400.gif",
+"http://25.media.tumblr.com/e7d5cb70d43f3e08af2d0cf0cfd634d9/tumblr_mp58fdDHco1s0teago1_400.gif",
+"http://www.hotflick.net/flicks/1996_Independence_Day/996IDY_Harvey_Fierstein_001.jpg",
+"http://25.media.tumblr.com/f882f983d3713c837968560a7b86bf61/tumblr_mj0oniXF4z1ryqbaio3_500.gif",
+"http://25.media.tumblr.com/0041d365b4513bc0b683de38e83cc1c9/tumblr_mj0oniXF4z1ryqbaio1_500.gif",
+"http://24.media.tumblr.com/b7cd62f4c9fd440bc0b105dc7ba2275f/tumblr_mpfqkpmvvv1qm3ypqo1_500.gif",
+"http://25.media.tumblr.com/tumblr_m6nz53VTlq1qziulwo1_500.gif",
+"http://25.media.tumblr.com/tumblr_lop8zgRXv51qh4fefo1_500.gif",
+"http://24.media.tumblr.com/tumblr_m7y7m1Lzel1qdhzpno1_500.gif",
+"http://24.media.tumblr.com/tumblr_m109h7Lmm41qfpkzvo1_250.gif",
+"http://i.imgur.com/1hwcw0t.gif",
+"http://24.media.tumblr.com/tumblr_lh76psLBBp1qbyfvlo1_500.png",
+"http://stream1.gifsoup.com/view6/4734639/independence-day-o.gif",
+"http://24.media.tumblr.com/tumblr_lnu43pb9U71qa9vqgo1_500.gif",
+"http://stream1.gifsoup.com/view6/3395589/independence-day-salute-o.gif",
+"http://24.media.tumblr.com/tumblr_m6nyxpNkzQ1qz4yoao1_500.gif",
+"http://stream1.gifsoup.com/view/993655/hello-boys-o.gif",
+"http://25.media.tumblr.com/tumblr_lvuhq2ppbZ1qj6sk2o1_500.gif",
+"http://25.media.tumblr.com/tumblr_lnul0brwkZ1qa9vqgo1_500.gif",
+"http://www.overthinkingit.com/wp-content/uploads/2009/06/ID4-Carousel.jpg",
+"http://24.media.tumblr.com/1809d365ffe158808fd59293aa520089/tumblr_mo3wsdZBZb1rtxuwwo1_1280.jpg",
+];
+window.onload = function() {
+  for(var index = 0; index < images.length; index++) {
+    var img = new Image();
+    img.src = images[index];
+    img.alt = "Independence Day";
+    document.getElementById('images').appendChild(img);
+  }
+};
+</script>
+<link rel="icon" type="image/ico" href="flag.ico">
+<link rel="image_src" href="./id4.jpg" />
+</head>
+
+<body>
+<audio autoplay controls loop>
+  <!-- grand old flag
+  <source src="https://dl.dropboxusercontent.com/u/9341244/GrandOldFlag.ogg" type="audio/ogg">
+  -->
+  <!-- triumphant ID4 theme -->
+  <source src="indepdence-day-theme1.ogg" type="audio/ogg">
+</audio>
+<div id="images" class="images"></div>
+</body>
+</html>
