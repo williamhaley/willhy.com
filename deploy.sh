@@ -1,4 +1,4 @@
 #!/bin/bash
 
-rsync -avze 'ssh -p 22' --delete public/ will@willhy.com:/srv/nginx/willhy.com/
+aws s3 sync public/ s3://willhy.com/
 
