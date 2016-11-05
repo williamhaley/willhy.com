@@ -25,3 +25,9 @@ NS=$(aws route53 get-hosted-zone --id="$ZONE_ID" --query='{NS:DelegationSet.Name
 echo "$NS"
 ```
 
+## Deploy changes
+
+```
+./deploy.sh
+```
+
