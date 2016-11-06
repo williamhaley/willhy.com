@@ -25,9 +25,9 @@ NS=$(aws route53 get-hosted-zone --id="$ZONE_ID" --query='{NS:DelegationSet.Name
 echo "$NS"
 ```
 
-## Deploy changes
+# Deployment
 
-```
-./deploy.sh
-```
+Semaphore CI is used to automatically deploy this blog to S3 for static hosting.
+
+See [this article](http://willhaley.com/blog/getting-my-jekyll-blog-on-aws-s3-with-semaphore-ci/) for details on how this was done.
 
