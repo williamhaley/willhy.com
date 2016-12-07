@@ -1,0 +1,109 @@
+<!doctype html>
+<head>
+<title>Password Generator</title>
+
+<style type="text/css">
+code {
+	white-space: pre;
+}
+
+#passphrase {
+	padding: 1em;
+	text-align: center;
+	width: 90%;
+	border: 1px solid navy;
+	margin: 1em auto;
+	height: 1.2em;
+	font-family: "monospace";
+	font-weight: bold;
+}
+
+button {
+	padding: 0.5em;
+	display: block;
+	margin: 1em auto;
+	width: 80%;
+}
+
+.error {
+	color: red;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+
+<h1>xckd-style passphrase generator</h1>
+
+<div id="passphrase"></div>
+
+<button disabled>Generate</button>
+
+<hr>
+
+<p>Here is how I generated the list of terms</p>
+
+<code>
+# List of words.
+aspell -d en dump master | aspell -l en expand > all-words.txt
+# Simple words, lowercased, between 3 and 8 characters.
+cat all-words.txt | grep -v "'" | grep -v '[A-Z]' | grep '.\{3\}' | grep -v '.\{8\}'  | sort > best-words.txt
+
+# In JSON format for this app.
+echo '{ "words": [' > words.json
+cat best-words.txt | awk '{print "\x22" $1 "\x22,"}' | sed '$ s/.$//' >> words.json
+echo '] }' >> words.json
+cat words.json | tr -d '\n' > words.final.json
+</code>
+
+<script type="text/javascript">
+(function () {
+
+var $passphrase = $('#passphrase');
+var $button     = $('button');
+
+var words;
+var length;
+
+function generatePassphrase() {
+	var passphrase = [];
+
+	for (var count = 0; count < 4; count++) {
+		var index = randomIndex();
+
+		passphrase.push(words[index]);
+	}
+
+	$passphrase.text(passphrase.join(' '));
+}
+
+function randomIndex() {
+	return Math.floor(Math.random() * length);
+}
+
+function phrasesLoaded(data) {
+	$('button').attr('disabled', false);
+
+	words = data.words;
+
+	length = words.length;
+
+	console.log('Loaded', length, 'words');
+
+	$button.on('click', generatePassphrase);
+}
+
+function loadFailed(err, thing) {
+	console.log(err);
+
+	$passphrase.addClass('error').text('Failed to load phrases. Maybe reload the page?');
+}
+
+$.getJSON('words.final.json').done(phrasesLoaded).fail(loadFailed);
+
+})();
+</script>
+</body>
+</html>
+
