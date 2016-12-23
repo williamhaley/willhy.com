@@ -1,6 +1,6 @@
 # willhy.com
 
-Install [terraform](https://www.terraform.io/downloads.html).
+Install [terraform](https://www.terraform.io/downloads.html) (`brew install terraform` on macOS).
 
 Install the aws cli using the [bundled installer](http://docs.aws.amazon.com/cli/latest/userguide/installing.html#install-bundle-other-os).
 
