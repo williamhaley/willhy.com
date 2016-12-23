@@ -1,3 +1,5 @@
+[![Build Status](https://semaphoreci.com/api/v1/willhaley/willhy-com/branches/master/badge.svg)](https://semaphoreci.com/willhaley/willhy-com)
+
 # willhy.com
 
 Install [terraform](https://www.terraform.io/downloads.html) (`brew install terraform` on macOS).
@@ -20,7 +22,7 @@ You can get the NS entries from Route 53 in the AWS console or using these comma
 
 ```
 DNS_NAME=willhy.com; \
-ZONE_ID=$(aws route53 list-hosted-zones-by-name --dns-name="$DNS_NAME" --query='HostedZones[*].{Id:Id}' --output=text); \
+ZONE_ID=$(aws route53 list-hosted-zones-by-name --dns-name="$DNS_NAME" --query='HostedZones[*].{Id:Id}' --max-items="1" --output=text); \
 NS=$(aws route53 get-hosted-zone --id="$ZONE_ID" --query='{NS:DelegationSet.NameServers}' --output='text'); \
 echo "$NS"
 ```
@@ -30,4 +32,3 @@ echo "$NS"
 Semaphore CI is used to automatically deploy this blog to S3 for static hosting.
 
 See [this article](http://willhaley.com/blog/getting-my-jekyll-blog-on-aws-s3-with-semaphore-ci/) for details on how this was done.
-
