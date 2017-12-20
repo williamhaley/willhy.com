@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-(cd public && python -m SimpleHTTPServer 8001)
+(cd public && python2 -m SimpleHTTPServer 8001)
