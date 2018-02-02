@@ -20,3 +20,7 @@ npm install netlify-lambda
 ./node_modules/.bin/netlify-lambda build src
 ```
 
+Hit your lambda at `http://whatever..../.netlify/functions/name`
+
+https://www.willhy.com/.netlify/functions/hello
+
