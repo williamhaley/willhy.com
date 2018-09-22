@@ -54,6 +54,34 @@ footer {
   clear:both;
 }
 
+form {
+	border: 4px ridge grey;
+	padding: 10px;
+}
+
+form label {
+	width: 100%;
+}
+
+form input,
+form textarea {
+	box-sizing: border-box;
+	background: white;
+	border: 2px solid red;
+	width: 100%;
+}
+
+form button {
+	margin-top: 20px;
+	width: 100%;
+	color: blue;
+	font-size: 1.5em;
+	border: 2px solid red;
+	font-family: 'serif';
+	padding: 5px;
+	background: grey;
+}
+
 </style>
 
 </head>
@@ -97,6 +125,23 @@ footer {
 			<td>Hello</td>
 		</tr>
 	</table>
+
+	<form netlify method="POST">
+		<label>
+			<div>Name</div>
+			<input name="name" type="text" />
+		</label>
+		<label>
+			<div>E-Mail Address</div>
+			<input name="email" type="email" />
+		</label>
+		<label>
+			<div>Comment</div>
+			<textarea name="comment"></textarea>
+		</label>
+
+		<button type="submit">Sign Guestbook</button>
+	</form>
 
 	<footer>
 		(c) 1996
