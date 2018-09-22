@@ -126,18 +126,18 @@ form button {
 		</tr>
 	</table>
 
-	<form netlify method="POST">
+	<form netlify name="guestbook" method="POST">
 		<label>
 			<div>Name</div>
-			<input name="name" type="text" />
+			<input name="name" type="text" required="true" />
 		</label>
 		<label>
 			<div>E-Mail Address</div>
-			<input name="email" type="email" />
+			<input name="email" type="email" required="true" />
 		</label>
 		<label>
 			<div>Comment</div>
-			<textarea name="comment"></textarea>
+			<textarea name="comment" required="true"></textarea>
 		</label>
 
 		<button type="submit">Sign Guestbook</button>
